@@ -10,3 +10,6 @@ Variables
 
 Files
 -----
+
+* `unbound.conf`:
+  Main unbound configuration file.
