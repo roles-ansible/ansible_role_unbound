@@ -20,7 +20,7 @@
 
 - name: Copy main unbound configuration
   copy:
-    src: 'unbound.conf'
+    src: '{{ lookup("hf", "unbound.conf") }}'
     dest: '/etc/unbound/unbound.conf'
     owner: root
     group: root
