@@ -1,12 +1,11 @@
 ---
 - name: Install unbound
   apt:
-    pkg: '{{ item }}'
+    pkg:
+      - unbound
     state: 'latest'
     update_cache: yes
     cache_valid_time: 43200
-  with_items:
-    - unbound
 
 - name: Copy unbound configuration snippets
   copy:
