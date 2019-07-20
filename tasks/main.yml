@@ -1,11 +1,12 @@
 ---
 - name: Install unbound
   apt:
-    pkg:
+    package:
       - unbound
     state: 'latest'
     update_cache: yes
     cache_valid_time: 43200
+
 
 - name: Copy unbound configuration snippets
   copy:
@@ -17,8 +18,9 @@
   with_fileglob:
     - 'files/snippets/*.conf'
 
+
 - name: Copy main unbound configuration
-  copy:
+  template:
     src: '{{ lookup("hf", "unbound.conf") }}'
     dest: '/etc/unbound/unbound.conf'
     owner: root
