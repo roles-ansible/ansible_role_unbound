@@ -17,6 +17,8 @@
     mode: 'u=rw,g=r,o=r'
   with_fileglob:
     - 'files/snippets/*.conf'
+  notify:
+    - unbound checkconf
 
 
 - name: Copy main unbound configuration
@@ -26,6 +28,5 @@
     owner: root
     group: root
     mode: 'u=rw,g=r,o=r'
-    validate: 'unbound-checkconf %s'
   notify:
-    - restart unbound
+    - unbound checkconf
