@@ -13,3 +13,9 @@ Files
 
 * `unbound.conf`:
   Main unbound configuration file.
+
+
+References
+----------
+
+* [Unbound Configuration](https://nlnetlabs.nl/documentation/unbound/unbound.conf/)
