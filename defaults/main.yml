@@ -1,4 +1,6 @@
 ---
+# simple version check for this role? (true is recomended)
+submodules_versioncheck: false
 
 unbound_listen_addresses:
   - '127.0.0.1@53'

@@ -1,4 +1,7 @@
 ---
+- include_tasks: versioncheck.yml
+  when: submodules_versioncheck|bool
+
 - name: Install unbound
   apt:
     package:
