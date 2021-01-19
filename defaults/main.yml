@@ -5,3 +5,5 @@ submodules_versioncheck: false
 unbound_listen_addresses:
   - '127.0.0.1@53'
   - '::1@53'
+
+unbound__state: 'present'

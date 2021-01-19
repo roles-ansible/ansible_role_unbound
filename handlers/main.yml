@@ -1,11 +1,10 @@
 ---
 - name: unbound checkconf
   command: unbound-checkconf /etc/unbound/unbound.conf
-  changed_when: True
-  notify: restart unbound
+  changed_when: true
+  notify: systemctl restart unbound
 
-
-- name: restart unbound
+- name: systemctl restart unbound
   service:
     name: unbound
     state: restarted
