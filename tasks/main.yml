@@ -1,18 +1,20 @@
 ---
-- include_tasks: versioncheck.yml
+- name: run optional versionscheck
+  ansible.builtin.include_tasks: versioncheck.yml
   when: submodules_versioncheck|bool
 
 - name: Install unbound
-  apt:
-    package:
+  become: true
+  ansible.builtin.apt:
+    name:
       - unbound
     state: "{{ unbound__state }}"
     update_cache: true
     cache_valid_time: 43200
 
-
 - name: Copy unbound configuration snippets
-  copy:
+  become: true
+  ansible.builtin.copy:
     src: '{{ item }}'
     dest: '/etc/unbound/unbound.conf.d/'
     owner: root
@@ -23,9 +25,9 @@
   notify:
     - unbound checkconf
 
-
 - name: Copy main unbound configuration
-  template:
+  become: true
+  ansible.builtin.template:
     src: 'files/unbound.conf'
     dest: '/etc/unbound/unbound.conf'
     owner: root
