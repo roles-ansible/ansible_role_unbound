@@ -2,7 +2,11 @@
 - name: unbound checkconf
   become: true
   ansible.builtin.command: unbound-checkconf /etc/unbound/unbound.conf
-  changed_when: true
+  retries: 5
+  delay: 3
+  register: result
+  until: result.rc == 0
+
   notify: systemctl restart unbound
 
 - name: systemctl restart unbound
