@@ -1,3 +1,5 @@
+[![Ansible Galaxy](https://raw.githubusercontent.com/roles-ansible/ansible_role_unbound/main/.github/galaxy.svg?sanitize=true)](https://galaxy.ansible.com/do1jlr/unbound) [![MIT License](https://raw.githubusercontent.com/roles-ansible/ansible_role_unbound/main/.github/license.svg?sanitize=true)](https://github.com/roles-ansible/ansible_role_unbound/blob/main/LICENSE)
+
  Unbound DNS Resolver
 ======================
 
