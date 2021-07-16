@@ -6,4 +6,8 @@ unbound_listen_addresses:
   - '127.0.0.1@53'
   - '::1@53'
 
+unbound_access_control:
+  - 'access-control: 127.0.0.1 allow'
+  - 'access-control: ::1 allow'
+
 unbound__state: 'present'

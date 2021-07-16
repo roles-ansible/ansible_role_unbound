@@ -10,9 +10,10 @@ Variables
 
 | variable | default | explaination |
 | -------- | ------- | ------------ |
-| ``unbound_listen_addresses:`` | ``['127.0.0.1@53','::1@53']`` | define interfaces and ports where unbound should listen |
-| ``unbound__state:`` | ``present`` | Package state. *(use ``latest`` for explicit update)*
-| ``submodules_versioncheck:`` | ``false`` | run basic versions check. ``true`` is recomended. |
+| ``unbound_listen_addresses`` | ``['127.0.0.1@53','::1@53']`` | define interfaces and ports where unbound should listen |
+| ``unbound_access_control``  | ``['access-control: 127.0.0.1 allow', 'access-control: ::1 allow']`` | define access control |
+| ``unbound__state`` | ``present`` | Package state. *(use ``latest`` for explicit update)*
+| ``submodules_versioncheck`` | ``false`` | run basic versions check. ``true`` is recomended. |
 
  Files
 -------
