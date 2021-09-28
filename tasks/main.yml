@@ -3,14 +3,19 @@
   ansible.builtin.include_tasks: versioncheck.yml
   when: submodules_versioncheck|bool
 
-- name: Install unbound
+- name: update cache
   become: true
   ansible.builtin.apt:
-    name:
-      - unbound
     state: "{{ unbound__state }}"
     update_cache: true
     cache_valid_time: 43200
+  when: ansible_pkg_mgr == "apt"
+
+- name: install unbound
+  become: true
+  ansible.builtin.package:
+    name: unbound
+    state: present
 
 - name: Copy unbound configuration snippets
   become: true
