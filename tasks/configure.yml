@@ -1,0 +1,23 @@
+---
+- name: Copy unbound configuration snippets
+  become: true
+  ansible.builtin.copy:
+    src: '{{ item }}'
+    dest: '/etc/unbound/unbound.conf.d/'
+    owner: root
+    group: root
+    mode: 'u=rw,g=r,o=r'
+  with_fileglob:
+    - 'files/snippets/*.conf'
+  notify: systemctl restart unbound
+
+- name: Copy main unbound configuration
+  become: true
+  ansible.builtin.template:
+    src: 'files/unbound.conf'
+    dest: '/etc/unbound/unbound.conf'
+    owner: root
+    group: root
+    mode: 'u=rw,g=r,o=r'
+    validate: unbound-checkconf %s
+  notify: systemctl restart unbound
