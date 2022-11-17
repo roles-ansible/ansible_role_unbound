@@ -11,3 +11,20 @@ unbound_access_control:
   - 'access-control: ::1 allow'
 
 unbound__state: 'present'
+
+# snippets for dns rebinding protection
+unbount__dns_rebind_protection: true
+unbound__protect_rebind_localhost: true
+unbound__protect_rebind_rfc1918: true
+unbound__protect_rebind_carrier_grade_nat: true
+unbound__protect_rebind_v4_link_local: true
+unbound__protect_rebind_unique_local: true
+unbound__protect_rebind_v6_link_local: true
+unbound__protect_rebind_rfc4291: true
+
+# dns qname privacy
+unbount__dns_qname_minimisation: true
+
+# anchor file
+unbound__auto_trust_anchor: true
+unbound__auto_trust_anchor_file: "/var/lib/unbound/root.key"
