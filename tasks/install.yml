@@ -1,12 +1,12 @@
 ---
-- name: update debian cache
+- name: Update debian cache
   become: true
   ansible.builtin.apt:
     update_cache: true
     cache_valid_time: 43200
   when: ansible_pkg_mgr == "apt"
 
-- name: install unbound
+- name: Install unbound
   become: true
   ansible.builtin.package:
     name: unbound

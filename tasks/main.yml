@@ -1,10 +1,10 @@
 ---
-- name: run optional versionscheck
+- name: Run optional versionscheck
   ansible.builtin.include_tasks: versioncheck.yml
   when: submodules_versioncheck|bool
 
-- name: install unbound
+- name: Install unbound
   ansible.builtin.include_tasks: install.yml
 
-- name: configure unbound
+- name: Configure unbound
   ansible.builtin.include_tasks: configure.yml

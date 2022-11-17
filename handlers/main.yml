@@ -1,5 +1,5 @@
 ---
-- name: systemctl restart unbound
+- name: Systemctl restart unbound
   become: true
   ansible.builtin.service:
     name: unbound

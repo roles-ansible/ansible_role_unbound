@@ -6,10 +6,10 @@
     dest: '/etc/unbound/unbound.conf.d/'
     owner: root
     group: root
-    mode: 'u=rw,g=r,o=r'
+    mode: 'u=rwX,g=rX,o=rX'
   with_fileglob:
     - 'files/snippets/*.conf'
-  notify: systemctl restart unbound
+  notify: Systemctl restart unbound
 
 - name: Copy main unbound configuration
   become: true
@@ -20,4 +20,4 @@
     group: root
     mode: 'u=rw,g=r,o=r'
     validate: unbound-checkconf %s
-  notify: systemctl restart unbound
+  notify: Systemctl restart unbound
