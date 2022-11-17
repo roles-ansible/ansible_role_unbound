@@ -15,6 +15,8 @@ Variables
 | ``unbound__state`` | ``present`` | Package state. *(use ``latest`` for explicit update)*
 | ``submodules_versioncheck`` | ``false`` | run basic versions check. ``true`` is recomended. |
 
+For more options have a look into the defaults/main.yml file.
+
  Files
 -------
 
